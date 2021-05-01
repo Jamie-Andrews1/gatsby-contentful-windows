@@ -1,15 +1,29 @@
+require('dotenv').config({
+  path:'.env'
+})
+
 module.exports = {
   siteMetadata: {
-    title: "Candles",
+    title: "J Windows",
   },
   plugins: [
+    "gatsby-plugin-sass",
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "CFPAT-doxdF5jhdcvoDDFx-Dtvo59EHmlCfrKXB42QQRK3eII",
-        spaceId: "",
+        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: process.env.SPACE_ID,
       },
     },
-    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images/`,
+    },
+  },
+    
   ],
 };
