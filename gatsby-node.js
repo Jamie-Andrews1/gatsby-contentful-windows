@@ -19,5 +19,5 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve('./src/templates/products.js'),
       context: {slug: product.node.slug}
     })
-  }).catch(error => console.log('error with contentfull data', error))
+  })
 }

@@ -1,6 +1,6 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import Img from 'gatsby-image';
+import { StaticImage } from "gatsby-plugin-image"
 
 
 export default function Navbar() {
@@ -11,14 +11,6 @@ export default function Navbar() {
         title
       }
     }
-    file(relativePath: {eq: "fensaLogo.jpg"}) {
-      relativePath
-      childImageSharp {
-        fluid {
-            ...GatsbyImageSharpFluid
-        }
-      }
-    }
   }
   `)
   const { title } = data.site.siteMetadata
@@ -27,7 +19,10 @@ export default function Navbar() {
   <nav>
     <h1>{ title }</h1>
     <div className="logo">
-    <Img  fluid={data.file.childImageSharp.fluid} />
+    <StaticImage  layout="constrained" 
+    src="../images/fensaLogo.jpg"
+    alt="Fensa Registered Installer"
+    />
     </div>
     <div className="links">
       <Link to="/">Home</Link>
