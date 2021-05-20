@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from "gatsby";
 import Layout from '../components/Layout';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from '../styles/home.module.scss'
 
 
@@ -13,7 +13,7 @@ export default function Home({ data }) {
             <h3>Open Yourself to New Technology</h3>
             <p>New A+++ Ratings Available</p>
           </div>
-          <Img fluid={data.file.childImageSharp.fluid} />
+          <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} alt="" />
         </section>
         <section className={styles.quotes}>
         <div>
@@ -57,9 +57,7 @@ export default function Home({ data }) {
   query bay {
     file(relativePath: {eq: "bay .jpg"}) {
       childImageSharp {
-        fluid{
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }`

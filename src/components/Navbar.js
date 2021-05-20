@@ -30,6 +30,7 @@ export default function Navbar() {
       <Link to="/doors">Doors</Link>
       <Link to="/conservatories">Conservatories</Link>
       <Link to="/bi-folds">Bi-Folds</Link>
+      <Link to="/testimonials">Testimonials</Link>
     </div>
   </nav>
   )

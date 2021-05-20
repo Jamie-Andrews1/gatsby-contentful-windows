@@ -2,7 +2,7 @@ const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
   const {data} = await graphql(`
-  query MyQuery {
+  query installs {
     allContentfulProducts {
       edges {
         node {
@@ -10,7 +10,15 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
+    allContentfulTestimonials {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
   }
+  
   `)
 
   data.allContentfulProducts.edges.forEach(product => {
@@ -18,6 +26,13 @@ exports.createPages = async ({ graphql, actions }) => {
       path: '/' + product.node.slug,
       component: path.resolve('./src/templates/products.js'),
       context: {slug: product.node.slug}
+    })
+  })
+  data.allContentfulTestimonials.edges.forEach(testimonial => {
+    actions.createPage({
+      path: '/' + testimonial.node.slug,
+      component: path.resolve('./src/templates/testimonials.js'),
+      context: {slug: testimonial.node.slug}
     })
   })
 }
