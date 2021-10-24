@@ -30,15 +30,17 @@ p {
 }
 nav {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   margin: 40px auto;
 }
 nav .links {
-  display: inline-block;
-
+  grid-column-end: auto;
   text-align: right;
 }
 nav .logo {
+  place-self: center;
+  padding: 20px;
   inline-size: 10vw;
 }
 nav a {

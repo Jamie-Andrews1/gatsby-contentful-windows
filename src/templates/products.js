@@ -10,9 +10,9 @@ export default function products({ data }) {
     <Layout>
     <div className={styles.images}>
       {data.install.product.map(item => (
-        <Img 
+        <Img
         fluid={item.fluid}
-        key={item.fluid.src} 
+        key={item.fluid.src}
         alt={item.title}
         />
       ))}
@@ -34,4 +34,3 @@ query products($slug: String) {
   }
 }
 `
-
