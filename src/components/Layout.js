@@ -11,7 +11,7 @@ export default function Layout({ children
         { children }
       </div>
       <footer>
-        <p>Copyright 2021 JWindows</p>
+        <p>&copy; 2023 JWindows</p>
       </footer>
     </div>
   )

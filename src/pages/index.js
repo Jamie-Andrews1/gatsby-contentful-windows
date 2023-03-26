@@ -5,6 +5,14 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from '../styles/home.module.scss'
 import FormErrors from '../components/FormErrors';
 
+export function Head() {
+  return (
+    <>
+      <title>J Windows</title>
+      <link id="icon" rel="icon" href="../images/favicon.ico" />
+    </>
+  )
+}
 export default function Home({ data }) {
   const [formData, setFormData] = useState({
     name: '', 
@@ -32,8 +40,8 @@ function handleChange(e){
 
   function validateField(fieldName, value) {
     let fieldValidationErrors = formData.formErrors
-    let emailValid = formData.emailValid
     let nameValid = formData.nameValid
+    let emailValid = formData.emailValid
     let phoneValid = formData.phoneValid
   
     switch(fieldName) {

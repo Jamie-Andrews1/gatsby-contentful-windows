@@ -17,7 +17,11 @@ export default function Navbar() {
 
   return (
   <nav>
-    <h1>{ title }</h1>
+    <h1>
+    <Link to="/">
+    { title }
+    </Link>
+    </h1>
     <div className="logo">
     <StaticImage  layout="constrained" 
     src="../images/fensaLogo.jpg"
