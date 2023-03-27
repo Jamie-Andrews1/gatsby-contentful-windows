@@ -10,7 +10,7 @@ module.exports = {
     "gatsby-plugin-sass",
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-contentful",
       options: {
