@@ -5,12 +5,16 @@
   margin-top: 8rem;
   block-size: 60vh;
 
+  Img {
+    max-inline-size: 60vw;
+  }
 }
 
 @media (max-width: 900px) {
   .images {
     display: flex;
     flex-direction: column;
+    inline-size: 100%;
     margin-top: 2rem;
   }
 }
