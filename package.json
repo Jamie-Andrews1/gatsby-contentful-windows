@@ -28,5 +28,10 @@
   },
   "devDependencies": {
     "gatsby-plugin-netlify": "^5.1.0"
+  },
+  "overrides": {
+    "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
+      "react": "^18.2.0"
+    }
   }
 }
