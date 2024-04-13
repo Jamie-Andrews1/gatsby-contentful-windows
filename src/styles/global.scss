@@ -52,8 +52,12 @@ nav a {
 }
 nav a:hover {
   border-color: white;
+  transition: all 0.5s;
 }
-
+.title {
+  font: inherit;
+  transition: all 0.5s;
+}
 footer p {
   text-align: center;
   color: #bbb;

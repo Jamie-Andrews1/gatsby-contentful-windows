@@ -17,6 +17,41 @@
 Img {
   inline-size: 40vw;
 }
+dialog[open] {
+  opacity: 1;
+  transform: scaleY(1);
+  &::backdrop {
+    background: linear-gradient(45deg, red, blue);
+    opacity: 0.4;
+  }
+}
+dialog button {
+  border: 1px solid darkgray;
+  background: grey;
+}
+dialog {
+  background-color: green;
+  margin: auto;
+  padding: 1rem;
+  border: none;
+  max-width: 25ch;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: all 0.7s allow-discrete;
+  &::backdrop {
+    background-color: rgb(0 0 0 / 0%);
+  }
+  & > * {
+    margin: 0 0 0.5rem 0;
+  }
+}
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
 .form {
   background-color: gray;
   padding: 2rem;
@@ -53,16 +88,28 @@ form {
     justify-items: flex-start;
   }
   input {
-    background: none;
+    background: transparent;
     padding: 10px 0;
     border-style: none;
     border-bottom: 1px solid black;
     font-weight: 500;
     font-size: 18px;
-    a:active {
-      border-style: none;
-      border-bottom: 1px solid black;
+    &:not(:focus) + .formError:before {
+      content: "";
     }
+  }
+  .formError {
+    margin: 0;
+    padding: 0;
+    color: red;
+    border-radius: 5px;
+    &::before {
+      content: attr(data);
+    }
+  }
+
+  .form {
+    content: "";
   }
   select {
     background: none;
@@ -87,8 +134,8 @@ form {
     padding: 10px;
     font-weight: 500;
     inline-size: fit-content;
-    a:hover {
-      background-color: white;
+    &:hover {
+      cursor: pointer;
     }
   }
 }
