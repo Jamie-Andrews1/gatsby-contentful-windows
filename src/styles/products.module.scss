@@ -1,12 +1,12 @@
 .images {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10vw;
+  gap: 40px;
   margin-top: 8rem;
   block-size: 60vh;
-
   Img {
-    max-inline-size: 60vw;
+    justify-self: center;
+    max-inline-size: 60ch;
   }
 }
 

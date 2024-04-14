@@ -75,7 +75,7 @@ export default function Home({ data }) {
     if (value === "") {
       setFormData(prevFormData => ({
         ...prevFormData,
-        formErrors: { [name]: "" },
+        formErrors: { ...prevFormData.formErrors, [name]: "" },
       }));
     }
     setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
@@ -142,7 +142,7 @@ export default function Home({ data }) {
         <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} alt="" />
       </section>
       <section className={styles.quotes}>
-        <div>
+        <div className={styles.quoteWrapper}>
           <div className={styles.quote}>
             <h2>Ordering a Quote</h2>
             <p>

@@ -1,8 +1,8 @@
 {
-  "name": "candles",
+  "name": "windows",
   "version": "1.0.0",
   "private": true,
-  "description": "Candles",
+  "description": "windows",
   "keywords": [
     "gatsby"
   ],
@@ -14,17 +14,18 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "gatsby": "^4.25.0",
+    "dotenv": "^16.4.5",
+    "gatsby": "^5.13.4",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-image": "^1.15.0",
-    "gatsby-plugin-sass": "^4.15.0",
-    "gatsby-plugin-sharp": "^3.15.0",
-    "gatsby-source-contentful": "^5.15.0",
-    "gatsby-source-filesystem": "^3.15.0",
-    "gatsby-transformer-sharp": "^3.15.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.32.11"
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-netlify": "^5.1.1",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-contentful": "^8.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.75.0"
   }
 }

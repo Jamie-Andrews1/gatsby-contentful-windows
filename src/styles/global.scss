@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+:root {
+  font-size: 1.2rem;
+}
 
 * {
   margin: 0;
-  padding: 0 10px;
+  padding: 0;
   text-decoration: none;
   font-family: "Montserrat";
   color: white;
 }
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  font-size: var(--font-size);
 }
 body {
+  margin: 0 20px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -21,28 +27,38 @@ body {
   );
 }
 .layout {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
+
+.content {
+  margin: 2rem;
+}
+
 p {
   margin: 16px auto;
   line-height: 1.5em;
 }
 nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
   gap: 1rem;
+  width: 100%;
   margin: 40px auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+nav > * {
+  flex: 1 1 200px;
 }
 nav .links {
-  grid-column-end: auto;
   text-align: right;
 }
 nav .logo {
+  margin: 10px;
   place-self: center;
-  padding: 20px;
-  inline-size: 10vw;
+  max-inline-size: 100px;
 }
+
 nav a {
   display: inline-block;
   margin-left: 20px;
@@ -62,4 +78,9 @@ footer p {
   text-align: center;
   color: #bbb;
   margin: 40px auto;
+}
+@media (max-width: 400px) {
+  :root {
+    font-size: 1rem;
+  }
 }
