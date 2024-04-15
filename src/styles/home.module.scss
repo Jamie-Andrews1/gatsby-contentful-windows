@@ -55,9 +55,8 @@ dialog {
 .form {
   background-color: gray;
   padding: 2rem;
-  justify-content: center;
   margin-top: 5rem;
-  inline-size: min(40ch, 100%);
+  inline-size: min(40ch, 80%);
   justify-self: center;
   h2 {
     padding: 1rem;
@@ -157,6 +156,7 @@ form {
   .quotes {
     display: grid;
     grid-template-columns: 1fr;
+    justify-content: center;
     place-items: center;
   }
   .quote {
@@ -170,7 +170,6 @@ form {
     padding: 2rem;
     justify-content: center;
     margin-top: 5rem;
-    inline-size: 60vw;
   }
   form {
     display: flex;
@@ -180,7 +179,6 @@ form {
 
     label {
       padding: 20px 0;
-      justify-items: flex-start;
     }
     input {
       background: none;
